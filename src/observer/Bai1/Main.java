@@ -1,7 +1,7 @@
 package src.observer.Bai1;
 
 import src.observer.Bai1.models.SinhVien;
-import src.observer.Bai1.services.LopTruong;
+import src.observer.Bai1.services.Lop;
 
 /*
  * File: Main
@@ -10,22 +10,22 @@ import src.observer.Bai1.services.LopTruong;
  */
 public class Main {
     public static void main(String[] args) {
-        LopTruong lopTruong = new LopTruong();
+        Lop lop = new Lop();
 
         SinhVien sinhVien = new SinhVien("Phat");
         SinhVien sinhVien1 = new SinhVien("Phuc");
         SinhVien sinhVien2 = new SinhVien("Vu");
 
-        lopTruong.add(sinhVien);
-        lopTruong.add(sinhVien1);
-        lopTruong.add(sinhVien2);
+        lop.attach(sinhVien);
+        lop.attach(sinhVien1);
+        lop.attach(sinhVien2);
 
-        lopTruong.thongBao("Lịch học ngày mai thay đổi, lớp vào học lúc 8:00 AM.");
+        lop.notify("Lịch học ngày mai thay đổi, lớp vào học lúc 8:00 AM.");
 
         // Một sinh viên rời khỏi danh sách nhận thông báo
-        lopTruong.remove(sinhVien2);
+        lop.dettach(sinhVien2);
 
         // Lớp trưởng gửi thông báo mới
-        lopTruong.thongBao("Lớp có bài kiểm tra vào thứ 6.");
+        lop.notify("Lớp có bài kiểm tra vào thứ 6.");
     }
 }

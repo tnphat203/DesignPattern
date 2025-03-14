@@ -8,24 +8,15 @@ import src.observer.Bai1.observers.Observer;
  * Date: 3/11/2025
  */
 public class SinhVien implements Observer {
-    private String tenSV;
+    private String name;
 
-    public void setTenSV(String tenSV) {
-        this.tenSV = tenSV;
+    public SinhVien(String name) {
+        this.name = name;
     }
-
-    public String getTenSV() {
-        return tenSV;
-    }
-
-    public SinhVien(String tenSV) {
-        this.tenSV = tenSV;
-    }
-
 
     @Override
-    public void nhanThongBao(String thongBao) {
-        System.out.println(tenSV + " nhận thông báo: " + thongBao);
+    public void update(String message) {
+        System.out.println("Sinh vien " + name + " nhan duoc thong bao: " + message);
     }
 
 }

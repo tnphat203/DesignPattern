@@ -10,21 +10,21 @@ import java.util.List;
  * Author: Tran Ngoc Phat
  * Date: 3/11/2025
  */
-public class LopTruong {
+public class Lop {
     private List<Observer> observers = new ArrayList<>();
 
-    public void add(Observer observer) {
+    public void attach(Observer observer) {
         observers.add(observer);
     }
 
-    public void remove(Observer observer) {
+    public void dettach(Observer observer) {
         observers.remove(observer);
     }
 
-    public void thongBao(String thongBao) {
-        System.out.println("Lop truong thong bao: " + thongBao);
+    public void notify(String message) {
+        System.out.println("Lop truong thong bao: " + message);
         for (Observer observer : observers) {
-            observer.nhanThongBao(thongBao);
+            observer.update(message);
         }
     }
 }
